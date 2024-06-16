@@ -4,3 +4,5 @@ streamlit
 plotly
 openpyxl
 lxml
+streamlit-extras
+st-pages
