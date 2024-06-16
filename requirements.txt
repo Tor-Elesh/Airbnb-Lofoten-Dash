@@ -3,4 +3,3 @@ numpy
 streamlit
 plotly
 openpyxl
-data_editor
