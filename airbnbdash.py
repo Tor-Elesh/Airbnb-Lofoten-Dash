@@ -79,6 +79,12 @@ col5.metric("Snitt antall senger",averagebeds.round(2).astype(str) + ' Senger')
 
 #Row B
 c1, c2 = st.columns((7,3))
+with c1:
+    st.markdown('Snitt Pris over tid')
+    st.plotly_chart(px.line(filtered_data.groupby('check in')['price (NOK)'].mean().reset_index(),
+                  x="check in",
+                  y="price (NOK)",
+                  markers=True), use_container_width=True)
 with c2:
     st.markdown('Airbnb listings')
     st.data_editor(
@@ -86,10 +92,4 @@ with c2:
         column_config={
             "url": st.column_config.LinkColumn("Link til Airbnb")
         },
-        hide_index=True,)
-with c1:
-    st.markdown('Snitt Pris over tid')
-    st.plotly_chart(px.line(filtered_data.groupby('check in')['price (NOK)'].mean().reset_index(),
-                  x="check in",
-                  y="price (NOK)",
-                  markers=True), use_container_width=True)
+        hide_index=True)
