@@ -3,7 +3,7 @@ import numpy as np
 import streamlit as st
 import plotly.express as px
 
-df = pd.read_excel(r'C:\Users\torel\Downloads\airbnbdata.xlsx')
+df = pd.read_excel(r'airbnbdata.xlsx')
 
 df['price'] = df['price'].str.replace(' kr NOK ','')
 df['price'] = df['price'].str.split().agg("".join)
