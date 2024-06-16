@@ -87,7 +87,7 @@ with c1:
                   markers=True), use_container_width=True)
 with c2:
     st.markdown('Airbnb listings')
-    st.data_editor(
+    st.dataframe(
         filtered_data.sort_values('price (NOK)', ascending=False)[['name','price (NOK)','url']],
         column_config={
             "url": st.column_config.LinkColumn("Link til Airbnb")
