@@ -88,8 +88,9 @@ with c1:
 with c2:
     st.markdown('Airbnb listings')
     st.dataframe(
-        filtered_data.sort_values('price (NOK)', ascending=False)[['name','price (NOK)','url']],
+        filtered_data.drop_duplicates(subset=['name','price (NOK)']).sort_values('price (NOK)', ascending=False)[['name','price (NOK)','url']],
         column_config={
-            "url": st.column_config.LinkColumn("Link til Airbnb")
+            "name": st.column_config.LinkColumn("url")
         },
+        column_order=("name", "price (NOK)"),
         hide_index=True)
