@@ -54,6 +54,6 @@ with c2:
     st.dataframe(
         filtered_data.drop_duplicates(subset=['name','price (NOK)']).sort_values('price (NOK)', ascending=False)[['name','price (NOK)','url']],
         column_config={
-            "name": st.column_config.LinkColumn("url")
+            "url": st.column_config.LinkColumn()
         },
         hide_index=True)
