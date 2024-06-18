@@ -56,5 +56,4 @@ with c2:
         column_config={
             "name": st.column_config.LinkColumn("url")
         },
-        column_order=("name", "price (NOK)"),
         hide_index=True)
