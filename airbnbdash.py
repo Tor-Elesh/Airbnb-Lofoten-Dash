@@ -2,7 +2,7 @@ import pandas as pd
 import streamlit as st
 import plotly.express as px
 
-df = pd.read_excel(r'C:\Users\torel\Downloads\airbnbdata.xlsx')
+df = pd.read_excel('airbnbdata.xlsx')
 
 #-----------------------------------------------------------------------------------------------------------------------
 #Dashboarding
