@@ -42,15 +42,13 @@ col5.metric("Snitt antall senger",averagebeds.round(2).astype(str) + ' Senger')
 
 
 #Row B
-c1 = st.columns(1)
+c1,c2 = st.columns((5,5)
 with c1:
     st.markdown('Snitt Pris over tid')
     st.plotly_chart(px.line(filtered_data.groupby('check in')['price (NOK)'].mean().reset_index(),
                   x="check in",
                   y="price (NOK)",
                   markers=True), use_container_width=True)
-#Row C
-c2 = st.columns(1)
 with c2:
     st.markdown('Airbnb listings')
     st.dataframe(
